@@ -1,19 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact</title>
-
-    <!-- CSS Section -->
-    <!-- Bootstrap CSS for responsive design and styling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <!--CSS styling-->
+    <!-- Bootstrap CSS for styling -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="./content/app.css">
-
-
 </head>
 <body>
 <header>
@@ -25,6 +20,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ps-10">
+                <!-- Navigation links for different sections -->
                 <li class="nav-item me-4">
                     <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -35,16 +31,13 @@
                     <a class="nav-link" href="events.html"><i class="fa-solid fa-calendar-days"></i> Events</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link active" aria-current="page" href="contact.html"><i class="fa-solid fa-address-book"></i> Contact</a>
+                    <a class="nav-link" href="contact.html"><i class="fa-solid fa-address-book"></i> Contact</a>
                 </li>
-
                 <li class="nav-item me-4">
                     <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
                 </li>
-
-
-                <!-- Dropdown menu for additional links -->
-                <li class="nav-item dropdown me-4">
+                <!-- Dropdown menu for additional pages -->
+                <li class="nav-item dropdown me-4 active" aria-current="page">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         More
                     </a>
@@ -58,55 +51,48 @@
     </nav>
 </header>
 
-<main class="container">
-    <!-- Main heading -->
+
+<div class="container, text-center">
+    <!--Page heading-->
     <h1 class="mt-4">
-        Contact Us
+        Privacy Policy
     </h1>
+    <br>
+</div>
 
-    <!-- Contact form -->
-    <form class="col-lg-6 col-md-10 col-sm-12 mb-4">
-        <!-- Name input field -->
-        <div class="input-group mb-3">
-            <span class="input-group-text">Name: </span>
-            <input id="fullName" name="name" type="text" class="form-control"
-                   aria-describedby="Name" aria-label="Name" required>
-        </div>
-
-        <!-- Email input field -->
-        <div class="input-group mb-3">
-            <span class="input-group-text">Email Address: </span>
-            <input id="emailAddress" name="email" type="email" class="form-control"
-                   aria-describedby="Email" aria-label="Email" required>
-
-        </div>
-
-        <!-- Subject input field -->
-        <div class="input-group mb-3">
-            <span class="input-group-text">Subject: </span>
-            <input id="subject" name="subject" type="text" class="form-control"
-                   aria-describedby="subject" aria-label="subject" required>
-        </div>
-
-        <!-- Message input field -->
-        <div class="input-group mb-3">
-            <span class="input-group-text">Message: </span>
-            <textarea id="message" name="message" type="text"  class="form-control"
-                      aria-describedby="Message Area" aria-label="Message Area"></textarea>
-
-        </div>
-        <br>
-
-        <!-- Submit button -->
-        <button type="submit" class="btn btn-primary" style="background-color: black; border-color: black">Submit</button>
-    </form>
-    <!-- Success message -->
-    <p id="success-message" class="success-message">Form submitted successfully!</p>
+<!-- Main content container -->
+<main class="text-center">
+    <section>
+        <!-- Section for the introduction -->
+        <h3>Introduction</h3>
+        <p>Welcome to our website! This Privacy Policy outlines how we collect, use, and protect your personal information.</p>
+    </section>
+    <section>
+        <h3>Information We Collect</h3>
+        <p>We collect personal information when you visit our site, sign up for an account, or interact with certain features.</p>
+    </section>
+    <section>
+        <h3>How We Use Your Information</h3>
+        <p>Your personal data is used to provide you with a better user experience and to improve our services.</p>
+    </section>
+    <section>
+        <h3>Data Security</h3>
+        <p>We take the security of your data seriously and use various measures to protect it.</p>
+    </section>
+    <section>
+        <h3>Contact Us</h3>
+        <p>If you have any questions regarding this Privacy Policy, please contact us at privacy@ourwebsite.com.</p>
+    </section>
 </main>
 
-<!-- Scripting Sections-->
+<!-- Footer with copyright information -->
+<footer id="footer" class="text-center">
+    <p>&copy; 2025 Our Website. All Rights Reserved.</p>
+</footer>
+
+<!-- Bootstrap JavaScript bundle -->
 <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="scripts/contact.js"></script>
+<!-- Custom scripts -->
 <script src="scripts/main.js"></script>
 <script src="scripts/footer.js"></script>
 </body>

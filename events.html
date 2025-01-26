@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact</title>
 
-    <!-- CSS Section -->
-    <!-- Bootstrap CSS for responsive design and styling -->
+    <<!-- CSS Section -->
+    <!-- Bootstrap CSS for styling -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="./content/app.css">
@@ -25,25 +25,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ps-10">
+                <!-- Navigation links -->
                 <li class="nav-item me-4">
                     <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item me-4">
                     <a class="nav-link" href="opportunities.html"><i class="fa-solid fa-bullseye"></i> Opportunities</a>
                 </li>
+                <!-- Highlight the active page with `active` class -->
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="events.html"><i class="fa-solid fa-calendar-days"></i> Events</a>
+                    <a class="nav-link active" aria-current="page" href="events.html"><i class="fa-solid fa-calendar-days"></i> Events</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link active" aria-current="page" href="contact.html"><i class="fa-solid fa-address-book"></i> Contact</a>
+                    <a class="nav-link" href="contact.html"><i class="fa-solid fa-address-book"></i> Contact</a>
                 </li>
-
                 <li class="nav-item me-4">
                     <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
                 </li>
-
-
-                <!-- Dropdown menu for additional links -->
+                <!-- Dropdown menu -->
                 <li class="nav-item dropdown me-4">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         More
@@ -59,55 +58,69 @@
 </header>
 
 <main class="container">
-    <!-- Main heading -->
-    <h1 class="mt-4">
-        Contact Us
-    </h1>
+    <!-- Page title -->
+    <h1 class="mt-4 text-center"> Upcoming Events</h1>
 
-    <!-- Contact form -->
-    <form class="col-lg-6 col-md-10 col-sm-12 mb-4">
-        <!-- Name input field -->
-        <div class="input-group mb-3">
-            <span class="input-group-text">Name: </span>
-            <input id="fullName" name="name" type="text" class="form-control"
-                   aria-describedby="Name" aria-label="Name" required>
+    <!-- Filter Dropdown -->
+    <div class="mb-3">
+        <label for="eventFilter" class="form-label">Filter by Category</label>
+        <select class="form-select" id="eventFilter">
+            <option value="all">All Events</option>
+            <option value="fundraisers">Fundraisers</option>
+            <option value="workshops">Workshops</option>
+            <option value="cleanups">Cleanups</option>
+        </select>
+    </div>
+
+    <!-- Event Cards -->
+    <div class="row" id="eventsContainer">
+        <!-- Event 1 -->
+        <div class="col-md-4" data-category="fundraisers">
+            <div class="eventcard">
+
+                <!-- Event card for Fundraisers -->
+                <div class="card-body">
+                    <h5 class="card-title">Fundraiser</h5>
+                    <p class="card-text">Join us for a fun evening to raise funds for a good cause.</p>
+                    <p class="card-text"><small class="text-muted">Date: 25th Feb, 2025</small></p>
+                </div>
+            </div>
         </div>
 
-        <!-- Email input field -->
-        <div class="input-group mb-3">
-            <span class="input-group-text">Email Address: </span>
-            <input id="emailAddress" name="email" type="email" class="form-control"
-                   aria-describedby="Email" aria-label="Email" required>
+        <!-- Event card for workshops-->
+        <div class="col-md-4" data-category="workshops">
+            <div class="eventcard">
 
+                <div class="card-body">
+                    <h5 class="card-title">Workshops</h5>
+                    <p class="card-text">A workshop to learn the best practices for volunteering.</p>
+                    <p class="card-text"><small class="text-muted">Date: 10th Mar, 2025</small></p>
+                </div>
+            </div>
         </div>
 
-        <!-- Subject input field -->
-        <div class="input-group mb-3">
-            <span class="input-group-text">Subject: </span>
-            <input id="subject" name="subject" type="text" class="form-control"
-                   aria-describedby="subject" aria-label="subject" required>
+        <!-- Event 3 for cleanups-->
+        <div class="col-md-4" data-category="cleanups">
+            <div class="eventcard">
+
+                <div class="card-body">
+                    <h5 class="card-title">Cleanups</h5>
+                    <p class="card-text">Join us in cleaning up the local park. Your help matters!</p>
+                    <p class="card-text"><small class="text-muted">Date: 5th Apr, 2025</small></p>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <!-- Message input field -->
-        <div class="input-group mb-3">
-            <span class="input-group-text">Message: </span>
-            <textarea id="message" name="message" type="text"  class="form-control"
-                      aria-describedby="Message Area" aria-label="Message Area"></textarea>
-
-        </div>
-        <br>
-
-        <!-- Submit button -->
-        <button type="submit" class="btn btn-primary" style="background-color: black; border-color: black">Submit</button>
-    </form>
-    <!-- Success message -->
-    <p id="success-message" class="success-message">Form submitted successfully!</p>
 </main>
 
 <!-- Scripting Sections-->
 <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="scripts/contact.js"></script>
 <script src="scripts/main.js"></script>
+<script src="scripts/backToTop.js"></script>
+<!-- Footer script -->
 <script src="scripts/footer.js"></script>
+
 </body>
 </html>
+

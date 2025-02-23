@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Gallery</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./content/app.css">
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand ms-1" href="index.html">Volunteer Connect</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ps-10">
+                <li class="nav-item me-1">
+                    <a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="opportunities.html"><i class="fa-solid fa-bullseye"></i> Opportunities</a>
+                </li>
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="events.html"><i class="fa-solid fa-calendar-days"></i> Events</a>
+                </li>
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="contact.html"><i class="fa-solid fa-address-book"></i> Contact</a>
+                </li>
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+                </li>
+                <!-- news link -->
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="news.html"><i class="fa-solid fa-newspaper"></i> News</a>
+                </li>
+                <li class="nav-item dropdown me-1">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="privacyPolicy.html">Privacy Policy</a>
+                        <a class="dropdown-item" href="termsOfService.html">Terms of Service</a>
+                        <a class="dropdown-item" href="gallery.html">Gallery</a>
+                    </div>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav me-1">
+                <li class="nav-item">
+                    <a id="login" class="nav-link" href="login.html#"><i class="fas fa-sign-in-alt"></i>Login</a>
+                </li>
+            </ul>
+            <!-- Search Bar -->
+            <form class="d-flex" role="search" onsubmit="searchSite(event)">
+                <input class="form-control me-2" type="search" id="searchInput" placeholder="Search events, news..." aria-label="Search">
+                <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-search"></i></button>
+            </form>
+
+            <!-- Welcome message -->
+            <p id="welcomeMessage" style="font-weight: bold; color: green; margin: 10px;"></p>
+        </div>
+    </nav>
+</header>
+
+<div class="gallery-container">
+    <h1 class="mt-4 mb-3">
+        Event Gallery
+    </h1>
+    <div class="gallery" id="gallery"></div>
+
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox" style="display: none;">
+    <span class="close" id="close">&times;</span>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="">
+    <div id="lightbox-text" class="lightbox-text"></div>
+</div>
+
+
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/footer.js"></script>
+<script src="scripts/login.js"></script>
+
+
+</body>
+</html>

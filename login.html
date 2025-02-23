@@ -8,14 +8,68 @@
     <title>Login</title>
 
     <!-- CSS Section -->
+    <!-- Bootstrap CSS for styling -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
-    <link rel="stylesheet" href="content/app.css">
+    <link rel="stylesheet" href="./content/app.css">
 
 
 </head>
 <body>
 <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand ms-1" href="index.html">Volunteer Connect</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ps-10">
+                <li class="nav-item me-2">
+                    <a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item me-">
+                    <a class="nav-link" href="opportunities.html"><i class="fa-solid fa-bullseye"></i> Opportunities</a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link" href="events.html"><i class="fa-solid fa-calendar-days"></i> Events</a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link" href="contact.html"><i class="fa-solid fa-address-book"></i> Contact</a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+                </li>
+                <!-- news link -->
+                <li class="nav-item me-2">
+                    <a class="nav-link" href="news.html"><i class="fa-solid fa-newspaper"></i> News</a>
+                </li>
+                <li class="nav-item dropdown me-2">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="privacyPolicy.html">Privacy Policy</a>
+                        <a class="dropdown-item" href="termsOfService.html">Terms of Service</a>
+                        <a class="dropdown-item" href="gallery.html">Gallery</a>
+                    </div>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav me-2">
+                <li class="nav-item">
+                    <a id="login" class="nav-link" href="login.html#"><i class="fas fa-sign-in-alt"></i>Login</a>
+                </li>
+            </ul>
+            <!-- Search Bar -->
+            <form class="d-flex" role="search" onsubmit="searchSite(event)">
+                <input class="form-control me-2" type="search" id="searchInput" placeholder="Search events, news..." aria-label="Search">
+                <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-search"></i></button>
+            </form>
+
+            <!-- Welcome message -->
+            <p id="welcomeMessage" style="font-weight: bold; color: green; margin: 10px;"></p>
+        </div>
+    </nav>
 </header>
 
 <!-- Main Content -->
@@ -28,6 +82,7 @@
                 <div id="messageArea"></div>
                 <form id="loginForm" novalidate>
 
+                    <!--Username -->
                     <div class="form-group mb-2">
                         <div class="input-group">
                           <span class="input-group-addon">
@@ -40,6 +95,7 @@
 
                     </div>
 
+                    <!--Login -->
                     <div class="form-group mb-2">
                         <div class="input-group">
                           <span class="input-group-addon">
@@ -53,7 +109,7 @@
                     </div>
                     <div class="text-end">
                         <button id="loginButton"
-                                type="button"
+                                type="submit"
                                 class="btn btn-primary btn-sm"><i class="fa-sign-in-alt"></i> Login</button>
 
                         <button id="cancelButton"
@@ -63,20 +119,19 @@
                 </form>
 
             </div>
-            <p class="text-center text-muted small">
-                Don't have an account?
-                <a href="register.html">Register Here!</a>
-            </p>
         </div>
     </div>
 </main>
 
 
 <!-- Scripting Sections-->
-<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="scripts/namespace.js"></script>
-<script src="scripts/app.js"></script>
 <script src="scripts/user.js"></script>
+<script src="scripts/main.js"></script>
+<!-- Footer script -->
+<script src="scripts/footer.js"></script>
+<script src="scripts/login.js"></script>
 
 </body>
 </html>

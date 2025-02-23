@@ -8,10 +8,16 @@
       "Password" : "123456"
     },
     {
-      "DisplayName" : "Samwise Gamgee",
-      "EmailAddress" : "samwise@durhamcollege.ca",
-      "Username" : "sgamgee",
+      "DisplayName" : "Subhana Hashimi",
+      "EmailAddress" : "SubhanaHashimi@durhamcollege.ca",
+      "Username" : "sHashimi",
       "Password" : "789012"
+    },
+    {
+      "DisplayName" : "Manjot Kaur",
+      "EmailAddress" : "manjotk@durhamcollege.ca",
+      "Username" : "mKaur",
+      "Password" : "022006"
     },
     {
       "DisplayName" : "admin",

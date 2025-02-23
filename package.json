@@ -1,0 +1,13 @@
+{
+  "name": "assignment01",
+  "version": "1.0.0",
+  "description": "Assignment01",
+  "main": "index.js",
+  "author": "manjot",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3"
+  }
+}

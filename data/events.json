@@ -1,0 +1,65 @@
+[
+  {
+    "category": "fundraisers",
+    "location": "Toronto",
+    "date": "15th May 2025",
+    "title": "Fundraiser",
+    "description": "Join us for a fun evening to raise funds for a good cause."
+  },
+  {
+    "category": "fundraisers",
+    "location": "Ottawa",
+    "date": "15th March 2025",
+    "title": "Charity Gala",
+    "description": "A black-tie event with dinner and live entertainment to support our mission."
+  },
+  {
+    "category": "fundraisers",
+    "location": "Vancouver",
+    "date": "8th June 2025",
+    "title": "5K Charity Run",
+    "description": "Join our fun run to support underprivileged children."
+  },
+  {
+    "category": "workshops",
+    "location": "Toronto",
+    "date": "10th March 2025",
+    "title": "Workshops",
+    "description": "A workshop to learn the best practices for volunteering."
+  },
+  {
+    "category": "workshops",
+    "location": "Oshawa",
+    "date": "22nd March 2025",
+    "title": "Leadership in Volunteering",
+    "description": "Learn how to be an effective leader in your volunteer work."
+  },
+  {
+    "category": "workshops",
+    "location": "Brampton",
+    "date": "10th July 2025",
+    "title": "Nonprofit Digital Marketing",
+    "description": "A session on using social media and online tools for fundraising."
+  },
+  {
+    "category": "cleanups",
+    "location": "Mississauga",
+    "date": "5th April 2025",
+    "title": "Cleanups",
+    "description": "Join us in cleaning up the local park. Your help matters!"
+  },
+  {
+    "category": "cleanups",
+    "location": "Oshawa",
+    "date": "12th April 2025",
+    "title": "Beach Cleanup Drive",
+    "description": "Help clean up the shoreline and protect marine life."
+  },
+  {
+    "category": "cleanups",
+    "location": "Windsor",
+    "date": "3rd June 2025",
+    "title": "Riverbank Restoration",
+    "description": "Plant trees and remove trash from the riverbanks."
+  }
+]

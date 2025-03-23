@@ -1,0 +1,48 @@
+<h1 class="mb-5"> Plan an Event</h1>
+
+<form class="col-lg-6 col-md-10 col-sm-12 mb-4">
+  <div class="input-group mb-3">
+    <label for="eventName" class="input-group-text">Event Name: </label>
+    <input id="eventName" name="eventName" type="text" class="form-control"
+           aria-describedby="eventName-error" required>
+    <span id="eventName-error" class="text-danger"></span>
+  </div>
+
+  <div class="input-group mb-3">
+    <label for="location" class="input-group-text">Location: </label>
+    <input id="location" name="location" type="text" class="form-control"
+           aria-describedby="location-error" required>
+    <span id="location-error" class="text-danger"></span>
+  </div>
+
+  <!-- Event Date Input -->
+  <div class="input-group mb-3">
+    <label for="eventDate" class="input-group-text">Event Date: </label>
+    <input id="eventDate" name="eventDate" type="date" class="form-control" required>
+  </div>
+
+  <!-- Event Time Inputs (Fixed colon, hours and minutes) -->
+  <div class="input-group mb-3">
+    <label for="eventTime" class="input-group-text">Event Time: </label>
+    <input id="eventTime" name="eventTime" type="time" class="form-control" required>
+  </div>
+
+
+  <div class="input-group mb-3">
+    <label for="description" class="input-group-text">Description: </label>
+    <input id="description" name="description" type="text" class="form-control"
+           aria-describedby="description-error" required>
+    <span id="description-error" class="text-danger"></span>
+  </div>
+
+  <div class="input-group mb-3">
+    <input  id="subscribeCheckbox" name="subscribeCheckbox" type="checkbox"
+            class="from-check-input me-2">
+    <label class="form-check-label" for="subscribeCheckbox"> Subscribe to our event list</label>
+  </div>
+  <button id="sendButton" type="submit" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Submit</button>
+  <button id="cancelButton" type="reset" class="btn btn-warning"><i class="fa-solid fa-rotate-left"></i> Cancel</button>
+</form>
+<div class="col-lg-4 col-md-6">
+  <button id="showEventsList" class="btn btn-outline-primary mt-4"><i class="fa-solid fa-users"></i>Show Events List</button>
+</div>

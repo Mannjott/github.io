@@ -1,131 +1,162 @@
-"use strict";
-
-/*
-Represent a contact with a name, contact number and email address.
-*
-*/
-
+// Contact Class
 export class Contact {
 
     private _fullName: string;
-    private _contactNumber: string;
+    private _subject: string;
+    private _message: string;
     private _emailAddress: string;
 
     /**
      * Constructs a new contact instance
      * @param fullName
-     * @param contactNumber
+     * @param subject
+     * @param message
      * @param emailAddress
      */
 
-    constructor(fullName : string = "", contactNumber : string = "", emailAddress : string = "") {
+
+    constructor(fullName = "", emailAddress = "", subject = "", message = "") {
         this._fullName = fullName;
-        this._contactNumber = contactNumber;
         this._emailAddress = emailAddress;
+        this._subject = subject;
+        this._message = message;
     }
 
-    /**
-     * Gets the full name of the contact
-     * @returns {string}
-     */
-    get fullName() : string {
-        return this._fullName;
-    }
-
-    /**
-     * set the full name of the contact. validates input to ensure it's a non-empty string
-     * @param fullName
-     */
-    set fullName(fullName : string) {
-        if (fullName.trim() === "") {
-
-            throw new Error("Invalid fullName:Must be non-empty string");
+    set fullName(name : string) {
+        if (name.trim() === "") {
+            throw new Error("Invalid Name: Must be a non-empty string");
         }
-
-
-        this._fullName = fullName;
+        this._fullName = name;
     }
 
-    /**
-     * Gets the contact number of the contact
-     * @returns {string}
-     */
-    get contactNumber() : string {
-        return this._contactNumber;
-    }
-
-    /**
-     * Set the contact number of the contact. Validates input to ensure it matches 10 digit format.
-     * @param contactNumber
-     */
-    set contactNumber(contactNumber : string) {
-        const phoneRegex = /^\d{3}-\d{3}-\d{4}$/; //905-555-5555
-        if (!phoneRegex.test(contactNumber)) {
-
-            throw new Error("Invalid Contact number: Must be a 10-digit number");
+    set emailAddress(email : string) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            throw new Error("Invalid email address: Must be a valid format");
         }
-        this._contactNumber = contactNumber;
+        this._emailAddress = email;
     }
 
-    /**
-     * Get the email address for contact
-     * @returns {string}
-     */
-    get emailAddress() : string {
-        return this._emailAddress;
-    }
-
-    /**
-     * sets the email address of the contact. Validate input to ensure a standard email format
-     * @param address
-     */
-    set emailAddress(address : string) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // basic email format
-        if (!emailRegex.test(address)) {
-            throw new Error("Invalid email address: Must be non-empty string");
+    set subject(sub : string) {
+        if (sub.trim() === "") {
+            throw new Error("Subject cannot be empty");
         }
-        this._emailAddress = address;
+        this._subject = sub;
     }
 
-    /**
-     * Convert the contact details into a human-readable string
-     * @returns {string}
-     */
-    toString() : string {
-        return `Full Name: ${this._fullName}\n,
-                Contact Number: ${this._contactNumber}\n,
-                Email: ${this._emailAddress} `;
+    set message(msg : string) {
+        if (msg.trim() === "") {
+            throw new Error("Invalid Message: Message cannot be empty");
+        }
+        this._message = msg;
     }
 
-    /**
-     * Serializing the contact details into a string format suitable for storage
-     * @returns {string|null}
-     */
-    serialize() :string|null {
-        if (!this._fullName || !this._contactNumber || !this._emailAddress) {
-            console.error("One or more of the contact properties are missing or invalid")
+    toString() {
+        return `Full Name: ${this._fullName}, Email: ${this._emailAddress}, Subject: ${this._subject}, Message: ${this._message}`;
+    }
+
+    serialize() {
+        if (!this._fullName || !this._emailAddress || !this._subject || !this._message) {
+            console.error("One or more properties are missing or invalid");
             return null;
         }
-        return `${this._fullName},${this._contactNumber}, ${this._emailAddress}`;
+        return `${this._fullName},${this._emailAddress},${this._subject},${this._message}`;
     }
 
-    /**
-     * Deserializing a string (comma-delimited) of contact details and update properties.
-     * @param data
-     */
     deserialize(data : string) {
-        if (data.split(",").length !== 3) {
-            console.error("Invalid data format for deserializing data");
+        if (data.split(",").length !== 4) {
+            console.error("Invalid data format");
             return;
         }
-
         const proArray = data.split(",");
         this._fullName = proArray[0];
-        this._contactNumber = proArray[1];
-        this._emailAddress = proArray[2];
+        this._emailAddress = proArray[1];
+        this._subject = proArray[2];
+        this._message = proArray[3];
+    }
+}
+
+// Function to wait for the contact form and initialize it
+function waitForContactForm(retries: number = 20): void {
+    console.log("Checking if contact form is available...");
+
+    const form = document.querySelector<HTMLFormElement>('form');
+    const successMessage = document.getElementById('success-message') as HTMLParagraphElement | null;
+
+    if (form && successMessage) {
+        console.log("Contact form found! Initializing...");
+        initializeContactForm();
+    } else if (retries > 0) {
+        console.log(`Retrying... (${retries} attempts left)`);
+        setTimeout(() => waitForContactForm(retries - 1), 500); // Retry every 500ms
+    } else {
+        console.error("Contact form not found after multiple attempts.");
+    }
+}
+
+// Function to initialize the contact form
+export function initializeContactForm(): void {
+    console.log("Attempting to initialize contact form...");
+    const form = document.querySelector<HTMLFormElement>('form');
+    const successMessage = document.getElementById('success-message') as HTMLParagraphElement | null;
+
+    if (!form || !successMessage) {
+        console.error("Form or success message not found in DOM");
+        return;
     }
 
+    console.log("Form and success message found, attaching event listener");
+
+    // Remove any existing event listeners to prevent duplication
+    form.removeEventListener('submit', handleSubmit);
+    form.addEventListener('submit', handleSubmit);
 }
+
+// Function to handle form submission
+function handleSubmit(event: SubmitEvent): void {
+    event.preventDefault(); // Prevent default form submission behavior
+    console.log("Form submitted");
+
+    const successMessage = document.getElementById('success-message') as HTMLParagraphElement;
+    successMessage.style.display = 'block';
+    successMessage.scrollIntoView({ behavior: 'smooth' });
+
+    console.log("Success message should be visible now");
+
+    // Hide the "Thank You" message after 3 seconds and then redirect
+    setTimeout(() => {
+        successMessage.style.display = 'none';
+        console.log("Success message hidden");
+        window.location.hash = '/'; // Redirect to home page
+    }, 3000);
+
+    // Reset the form fields
+    (event.target as HTMLFormElement).reset();
+}
+
+// Function to check if we're on the contact page
+function isContactPage(): boolean {
+    console.log("Current hash:", window.location.hash);
+    return window.location.hash.includes('/contact'); // Adjust this based on your routing logic
+}
+
+// Tie initialization to SPA route changes or DOM updates
+window.addEventListener('hashchange', () => {
+    console.log("Hash changed. Checking if contact page is loaded...");
+    if (isContactPage()) {
+        setTimeout(() => waitForContactForm(), 300); // Give time for SPA router to load content
+    }
+});
+
+// Ensure it runs on page load as well
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM loaded. Checking if contact page is active...");
+    if (isContactPage()) {
+        setTimeout(() => waitForContactForm(), 300);
+    }
+});
+
+
 
 
 

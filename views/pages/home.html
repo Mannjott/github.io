@@ -1,7 +1,72 @@
-<h1 class="mb-5">Welcome to My Home Page</h1>
-<button id="AboutUsBtn" class="btn-primary">About Us</button>
+<!-- views/pages/home.html -->
+<div class="container">
+  <h1 class="mt-4">
+    Welcome to Volunteer Connect
+  </h1>
+  <!--  <h3>Time Zone</h3>-->
+  <p id="time-data">Current time and date...</p>
+</div>
 
-<div id="weather" class="mt-5">
-    <h3>Weather Information</h3>
-    <p id="weather-data">Fetching weather data...</p>
+<!-- Carousel Section -->
+<div class="container py-5">
+  <div class="row">
+    <!-- Carousel - Half of the page width with margin around -->
+    <div class="col-md-6 mt-2">
+      <div id="volunteerCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./images/community-volunteer.jpg" class="d-block w-100 mb-3 mt-3" alt="Volunteer Activity 1">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/shutterstock_1968042223.jpg" class="d-block w-100 mb-3 mt-3" alt="Volunteer Activity 2">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/IMG3117.jpg" class="d-block w-100 mb-3 mt-3" alt="Volunteer Activity 3">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/download.jpg" class="d-block w-100 mb-3 mt-3" alt="Volunteer Activity 3">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/Delpark-Vols-2.jpg" class="d-block w-100 mb-3 mt-3" alt="Volunteer Activity 3">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/volunteer-opportunities.jpg" class="d-block w-100 mb-3 mt-3" alt="Volunteer Activity 3">
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button id="GetInvolvedBtn" class="btn btn-primary">Get Involved</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mt-3">
+      <h2>What we do?</h2>
+      <p>Volunteer Connect helps build a stronger, more thoughtful community through innovative
+        programs that inspire, inform, and connect volunteers with the organizations that need them.
+        Through our online platform, we connect people of all ages to valuable volunteer
+        opportunities to build social capital in the communities we serve.
+        To date, we have connected volunteers to over 400 of our non-profit
+        members across Markham, Richmond Hill, and Vaughan.</p>
+      <h3>
+        These programs and services include but are not limited to:
+      </h3>
+      <ul>
+        <li>Jobs, skills and career and Youth</li>
+        <li>Seniors and older adults</li>
+        <li>Family and children</li>
+        <li>Newcomer support services</li>
+        <li>Arts, culture and heritage</li>
+        <li>Sports and recreation</li>
+        <li>Clubs and organizations</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- find location heading -->
+<div>
+  <h3>Find Locations</h3>
+  <p>Click on the button to find close location to you!</p>
+  <button id="toggle-button" onclick="toggleNearbyPlaces()">Find Nearby Places</button>
+  <div id="place-container"></div>
 </div>

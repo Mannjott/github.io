@@ -1,6 +1,7 @@
 "use strict";
 
-
+// IIFE (Immediately Invoked Function Expression) to create a core object if not already defined
+// User class definition
 export class User {
 
     private _displayName : string;
@@ -8,43 +9,48 @@ export class User {
     private _userName : string;
     private _password : string;
 
-    constructor(displayName : string = "", emailAddress : string = "",
-                userName : string = "", password : string = "") {
+    // Constructor initializes the user with default empty values for the properties
+    constructor(displayName = "", emailAddress = "",
+                userName = "", password = "") {
         this._displayName = displayName;
         this._emailAddress = emailAddress;
         this._userName = userName;
         this._password = password;
     }
 
-    get displayName() : string {
+    // Getter methods to access private properties
+    get displayName() {
         return this._displayName;
     }
 
-    get emailAddress() :string {
+    get emailAddress() {
         return this._emailAddress;
     }
 
-    get userName() : string {
+    get userName() {
         return this._userName;
     }
 
-    set displayName(displayName : string) {
+    // Setter methods to modify private properties
+    set displayName(displayName) {
         this._displayName = displayName;
     }
 
-    set emailAddress(emailAddress : string) {
+    set emailAddress(emailAddress) {
         this._emailAddress = emailAddress;
     }
 
-    set userName(userName : string) {
+    set userName(userName) {
         this._userName = userName;
     }
 
-    toString() : string {
+    // toString method to return a string representation of the user
+    toString() {
         return `Display Name: ${this._displayName}
-            \nEmail Address: ${this._emailAddress}\nUsername: ${this._userName}`;
+        \nEmail Address: ${this._emailAddress}\nUsername: ${this._userName}`;
     }
 
+    // Convert the user object to JSON format
     toJSON() : Record<string, string> {
         return {
             DisplayName: this._displayName,
@@ -54,6 +60,7 @@ export class User {
         }
     }
 
+    // Populate the user object from a JSON object
     fromJSON(data : { DisplayName : string, EmailAddress : string, UserName : string, Password: string}) {
         this._displayName = data.DisplayName;
         this._emailAddress = data.EmailAddress;
@@ -61,6 +68,8 @@ export class User {
         this._password = data.Password;
     }
 
+
+    // Serialize user data into a string format (comma separated values)
     serialize() : string|null {
         if (this._displayName !== "" && this._emailAddress !== "" && this._userName !== "") {
             return `${this._displayName}, ${this._emailAddress}, ${this._userName}`;
@@ -69,6 +78,7 @@ export class User {
         return null;
     }
 
+    // Deserialize data from a string (expects CSV format)
     deserialize(data : string) {
         let propertyArray = data.split(',');
         this._displayName = propertyArray[0];

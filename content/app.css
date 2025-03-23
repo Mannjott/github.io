@@ -1,53 +1,470 @@
-.input-group-addon:first-child
-{
-    border-right: 0;
+/* Assignment 2 CSS */
+
+/* Time css */
+#time-data {
+    position: absolute; /* Positions the element relative to its nearest positioned ancestor */
+    right: 20px; /* Positions it 20px from the right */
+    top: 85px; /* Positions it 85px from the top */
+    font-size: 20px; /* Sets font size */
+    color: #333; /* Sets text color */
+    padding: 10px 15px; /* Adds padding around the content */
+    text-align: right; /* Aligns the text to the right */
 }
 
-.input-group-addon
-{
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-    text-align: center;
-    border: 1px solid darkgrey;
-    border-radius: 4px;
+/* Styling for the news section */
+#news-data {
+    display: flex; /* Makes the container a flexbox */
+    flex-wrap: wrap; /* Allows items to wrap into new lines if needed */
+    gap: 20px; /* Adds spacing between the items */
+    justify-content: space-between; /* Distributes items evenly with space between them */
 }
 
-.input-group-addon .fa
-{
-    font-size: 18px;
+/* Styling for each individual news article */
+.news-article {
+    width: 48%; /* Sets the width of each article to 48% of the container */
+    background-color: #f4f4f4; /* Sets a light grey background */
+    padding: 10px; /* Adds padding inside the article */
+    border-radius: 5px; /* Rounds the corners of the article */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 
-.input-group .form-control
-{
-    position:relative;
-    z-index: 2;
-    float:left;
+/* Styling for images inside news articles */
+.news-article img {
+    width: 100%; /* Makes the image take up the full width of the article */
+    height: auto; /* Maintains the aspect ratio of the image */
+    border-radius: 5px; /* Rounds the corners of the image */
+}
+
+/* Styling for the title of news articles */
+.news-article h3 {
+    font-size: 18px; /* Sets the font size */
+    margin: 10px 0; /* Adds spacing above and below the title */
+}
+
+/* Styling for text in news articles */
+.news-article p {
+    font-size: 14px; /* Sets the font size */
+    color: #555; /* Sets a medium grey text color */
+}
+
+/* Styling for the place container */
+#place-container {
+    display: flex; /* Uses flexbox layout */
+    flex-direction: column; /* Arranges items in a column */
+    gap: 10px; /* Adds spacing between items */
+    margin-top: 10px; /* Adds top margin */
+}
+
+/* Styling for each place card */
+.place-card {
+    background: #f8f9fa; /* Light background color */
+    border-left: 5px solid #007bff; /* Adds a blue left border */
+    padding: 10px; /* Adds padding */
+    border-radius: 8px; /* Rounds the corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the place card */
+.place-card:hover {
+    transform: scale(1.02); /* Slightly increases size */
+    background: #e9ecef; /* Changes the background on hover */
+}
+
+/* Styling for the place name */
+.place-name {
+    font-size: 16px; /* Sets font size */
+    font-weight: bold; /* Makes the text bold */
+    color: #333; /* Sets text color */
+}
+
+/* Styling for the place address */
+.place-address {
+    font-size: 14px; /* Sets font size */
+    color: #666; /* Sets a lighter grey color */
+}
+
+/* Styling for the toggle button */
+#toggle-button {
+    background: black; /* Sets background to black */
+    color: white; /* Sets text color to white */
+    border: 1px solid; /* Adds a border */
+    border-radius: 10px; /* Rounds the corners */
+    padding: 10px 15px; /* Adds padding inside the button */
+    text-align: center; /* Centers the text */
+    font-size: 16px; /* Sets font size */
+}
+
+/* Highlight the active navigation link */
+.nav-link.active {
+    font-weight: bold; /* Makes the active link bold */
+}
+
+/* Styling for card elements */
+.card {
+    border: 1px solid #ccc; /* Adds a light border */
+    padding: 15px; /* Adds padding inside the card */
+    margin: 10px; /* Adds margin around the card */
+    border-radius: 5px; /* Rounds the corners */
+    width: 200px; /* Sets a fixed width */
+}
+
+/* Styling for button inside cards */
+.card button {
+    background-color: black; /* Sets background color to black */
+    color: white; /* Sets text color to white */
+    border: none; /* Removes border */
+    padding: 5px 10px; /* Adds padding */
+    cursor: pointer; /* Changes the cursor to a pointer */
+    border-radius: 3px; /* Rounds the corners */
+}
+/* Modal container styling */
+.modal {
+    display: none; /* Hides the modal by default */
+    position: fixed; /* Fixes the modal to the screen */
+    top: 50%; /* Centers the modal vertically */
+    left: 50%; /* Centers the modal horizontally */
+    transform: translate(-50%, -50%); /* Ensures perfect centering */
+    background: white; /* Sets the background to white */
+    padding: 20px; /* Adds padding inside the modal */
+    border: 1px solid #ccc; /* Adds border around modal */
+    border-radius: 5px; /* Rounds the corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
+}
+
+/* Active modal state, shown when modal is active */
+.modal.active {
+    display: block; /* Shows the modal */
+}
+/* Modal overlay styling */
+.modal-overlay {
+    display: none; /* Hides the overlay by default */
+    position: fixed; /* Fixes it to the screen */
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-bottom: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark translucent background */
 }
 
-.input-group .form-control:last-child
-{
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+/* Active modal overlay, shown when modal is active */
+.modal-overlay.active {
+    display: block; /* Shows the overlay */
+}
+
+/* Styling for the grid layout of cards */
+.cards-grid {
+    display: grid; /* Uses grid layout */
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
+    gap: 15px; /* Adds spacing between grid items */
+    margin: 10px; /* Adds margin around the grid */
+}
+
+.card {
+    border: 1px solid black; /* Adds a black border */
+    padding: 15px; /* Adds padding */
+    border-radius: 5px; /* Rounds the corners */
+    text-align: center; /* Centers the content */
+}
+
+/* Style for the event card container */
+.eventcard{
+    margin-top: 20px; /*Adds some space at top of the card*/
+    width: 80%; /* Reduce width to 80% of its container */
+    height: 300px; /* Increase height to 250px (adjust as needed) *//*margin: 10px; /* Center the cards */
+    border: 2px solid black;    /* Adds a solid black border with a thickness of 2px */
+    padding: 5px;              /* Adds 50px of space inside the border on all sides for better spacing */
+    border-radius: 10px;        /* Rounds the corners of the border with a radius of 10px */
+    text-align: center;         /* Centers the text content inside the event card */
+    font-size: 20px;
+}
+.event-filters {
+    display: flex;                /* Use flexbox for easy centering */
+    justify-content: center;      /* Center elements horizontally */
+    align-items: center;          /* Center elements vertically */
+    gap: 10px;                    /* Adds space between the filter elements */
+    flex-wrap: wrap;              /* Ensures that the elements wrap if screen is too small */
+    font-size: 18px;              /* Increase the font size for better readability */
+}
+
+.event-filters label, .event-filters select, .event-filters input {
+    font-size: 1.2rem;            /* Adjust the font size for all input fields and labels */
+    margin: 3px;                  /* Add some space around the elements */
+}
+
+
+/* Sticky footer styling */
+.footer {
+    position: fixed; /* Fixes the footer to the bottom of the page */
+    bottom: 0; /* Aligns the footer to the bottom */
+    width: 100%; /* Makes the footer span the full width of the screen */
+    background-color: #333; /* Dark background for the footer */
+    color: white; /* Sets the text color to white */
+    text-align: center; /* Centers the text inside the footer */
+    padding: 8px 0; /* Adds padding to the top and bottom of the footer */
+    z-index: 1000; /* Ensures the footer stays on top of other content */
+}
+
+/* Add margin or padding to the body to avoid overlap */
+body {
+    margin-bottom: 40px; /* Space for the footer */
+}
+
+/* Style links in the footer */
+.footer a {
+    color: white; /* Sets the link color to white */
+    margin: 0 15px; /* Adds space between links */
+    text-decoration: none; /* Removes underline from the links */
+}
+
+/* Hover effect for links inside the footer */
+.footer a:hover {
+    text-decoration: underline; /* Underlines the text when hovered */
+}
+
+/* Back to top button */
+#back-to-top {
+    position: fixed; /* Fixes the button to the bottom right of the page */
+    bottom: 20px; /* Positions the button 20px from the bottom */
+    right: 20px; /* Positions the button 20px from the right */
+    padding: 10px 15px; /* Adds padding inside the button */
+    background-color: #007bff; /* Sets a blue background for the button */
+    color: white; /* Sets the text color to white */
+    border: none; /* Removes the border */
+    border-radius: 5px; /* Rounds the corners of the button */
+    display: none; /* Initially hides the button */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    z-index: 1000; /* Ensures the button is above other elements */
+    margin-bottom: 35px; /* Adds space from the bottom */
+}
+
+/* Hover effect for the back-to-top button */
+#back-to-top:hover {
+    background-color: #0056b3; /* Darkens the background on hover */
+}
+
+/* Image container styling */
+.image-container {
+    width: 1300px; /* Sets the width of the container */
+    height: 500px; /* Sets the height of the container */
+    overflow: hidden; /* Hides overflow content */
+}
+
+/* Styling for images inside the image container */
+.image-container img {
+    width: 100%; /* Makes the image fill the container width */
+    height: auto; /* Maintains the aspect ratio of the image */
+    object-position: center; /* Centers the image inside the container */
+    margin-top: 20px; /* Adds a margin to the top */
+}
+
+/* Heading styling */
+h1 {
+    margin-top: 5px; /* Adds a small margin to the top of the heading */
+}
+
+/* Main container styling with a two-column grid */
+.mainContainer {
+    display: grid; /* Uses grid layout */
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    gap: 20px; /* Adds space between the columns */
+    padding: 20px; /* Adds padding inside the container */
+}
+
+/* Styling for the text column */
+.text-column {
+    padding-right: 20px; /* Adds padding to the right side of the text column */
+}
+
+/* Styling for images inside the image column */
+.image-column img {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    margin-top: 40px; /* Adds a margin to the top */
+}
+
+/* Second container with a three-column grid */
+.secondContainer {
+    display: grid; /* Uses grid layout */
+    grid-template-columns: 1fr 1fr 1fr; /* Creates three equal columns */
+    gap: 20px; /* Adds space between the columns */
+    padding: 15px; /* Adds padding inside the container */
+    margin-left: 80px; /* Adds space to the left */
+}
+
+/* Styling for the success message element */
+.success-message {
+    display: none; /* Hides the element by default */
+    color: green; /* Sets the text color to green */
+    font-weight: bold; /* Makes the text bold */
 }
 
 
 
-.login
-{
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: lightgrey;
-    border-radius: .3rem;
+/* Icon styling inside the design column */
+.design-column i {
+    font-size: 2rem; /* Adjusts the icon size */
 }
 
-.login input
-{
-    background-color: white;
-    border-color: darkgrey;
-    border-radius: .4em;
-    width: 100%;
+/* Login form styling */
+.input-group-addon:first-child {
+    border-right: 0; /* Removes right border for the first input addon */
 }
+
+.input-group-addon {
+    padding: 6px 12px; /* Adds padding inside the input addon */
+    font-size: 14px; /* Sets the font size */
+    font-weight: 400; /* Sets the font weight */
+    line-height: 1; /* Sets line height */
+    text-align: center; /* Centers the text inside the addon */
+    border: 1px solid darkgrey; /* Adds a border around the addon */
+    border-radius: 4px; /* Rounds the corners */
+}
+
+/* Styling for font awesome icons inside input addons */
+.input-group-addon .fa {
+    font-size: 18px; /* Increases icon size */
+}
+
+/* Styling for the form control input field */
+.input-group .form-control {
+    position:relative; /* Positions the form control relative to its container */
+    z-index: 2; /* Ensures the form control is above other elements */
+    float:left; /* Floats the input to the left */
+    width: 100%; /* Makes the input field take up the full width */
+    margin-bottom: 0; /* Removes bottom margin */
+}
+
+/* Styling for the last form control input field */
+.input-group .form-control:last-child {
+    border-top-left-radius: 0; /* Removes the top-left corner radius */
+    border-bottom-left-radius: 0; /* Removes the bottom-left corner radius */
+}
+
+/* Login form styling */
+.login {
+    padding: 2rem 1rem; /* Adds padding inside the login form */
+    margin-bottom: 2rem; /* Adds space below the form */
+    background-color: lightgrey; /* Sets a light grey background */
+    border-radius: .3rem; /* Rounds the corners */
+}
+
+/* Styling for input fields in the login form */
+.login input {
+    background-color: white; /* Sets the input background to white */
+    border-color: darkgrey; /* Sets the border color */
+    border-radius: .4em; /* Rounds the corners of the input */
+    width: 100%; /* Makes the input field take up the full width */
+}
+
+/* Gallery container styling */
+.gallery-container {
+    text-align: center; /* Centers the content */
+    margin: 20px; /* Adds margin around the container */
+}
+
+/* Gallery grid layout */
+.gallery {
+    display: grid; /* Uses grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Creates responsive columns */
+    gap: 10px; /* Adds space between grid items */
+    justify-items: center; /* Centers items in each grid cell */
+}
+
+/* Styling for gallery images */
+.gallery img {
+    width: 100%; /* Makes the image fill its container */
+    height: auto; /* Maintains aspect ratio */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    border-radius: 8px; /* Rounds the corners of the image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed; /* Fixes the lightbox to the screen */
+    top: 0; /* Aligns it to the top */
+    left: 0; /* Aligns it to the left */
+    width: 100%; /* Makes the lightbox span the full width */
+    height: 100%; /* Makes the lightbox span the full height */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    display: none; /* Hides the lightbox by default */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+
+/* Text in the lightbox */
+.lightbox-text {
+    color: white; /* Sets text color to white */
+    font-size: 24px; /* Larger font size */
+    margin-bottom: 20px; /* Adds space between the text and image */
+    font-weight: bold; /* Makes the text bold */
+    position: absolute; /* Positions text absolutely */
+    top: 20px; /* Positions text near the top */
+    left: 50%; /* Centers the text horizontally */
+    transform: translateX(-50%); /* Centers the text exactly */
+}
+
+/* Image styling in the lightbox */
+#lightbox-img {
+    width: auto; /* Allows image to scale based on aspect ratio */
+    height: auto; /* Allows image to scale based on aspect ratio */
+    max-width: 500%; /* Sets max width */
+    max-height: 500%; /* Sets max height */
+    display: block; /* Makes the image a block element */
+    margin: 0 auto; /* Centers the image */
+    border: 2px solid #fff; /* Adds white border around the image */
+}
+
+/* Close button in the lightbox */
+#close {
+    color: white; /* Sets color to white */
+    position: absolute; /* Positions the close button absolutely */
+    top: 10px; /* Positions it near the top */
+    right: 20px; /* Positions it to the right */
+    font-size: 40px; /* Sets a large font size */
+    cursor: pointer; /* Changes the cursor to a pointer */
+}
+
+/* Responsive h1 and time zone for small screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem; /* Reduces font size for smaller screens */
+    }
+
+    #time-data {
+        font-size: 1rem; /* Reduces font size for time data */
+        margin-top: 20px; /* Adds top margin */
+    }
+}
+
+/* Styling for the feedback section */
+#enter-feedback {
+    margin-bottom: 15px; /* Adds space below the feedback section */
+}
+
+
+/* style for active link */
+.nav-item.active a {
+    color: Gold;
+    font-weight: bold;
+}
+
+
+#success-message {
+    display: none; /* Hide initially */
+    background-color: #d4edda; /* Light green background for success */
+    color: #155724; /* Dark green text */
+    padding: 10px; /* Add some padding */
+    border: 1px solid #c3e6cb; /* Green border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center-align text */
+    margin-top: 20px; /* Add space above the message */
+    font-weight: bold; /* Make text bold */
+}
+
+
+
+
+
+

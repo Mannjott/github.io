@@ -1,0 +1,52 @@
+ <h1 class="mb-3 mt-3">Feedback</h1>
+    <div class="mb-3 small" style="font-size: 18px">
+        Please provide your feedback in the form below. We would love to hear your thoughts and suggestions!
+    </div>
+
+    <!-- Feedback form -->
+    <form name="feedback_form" id="feedback_form" method="post">
+        <!-- Rating section with radio buttons for feedback -->
+        <label style="font-size: 18px"> How do you rate your overall experience?</label>
+        <div class="mb-3 d-flex flex-row py-1">
+            <div class="form-check mr-3">
+                <input class="form-check-input" type="radio" name="rating" id="rating_bad" value="bad" required>
+                <label class="form-check-label" for="rating_bad"><i class="fa-solid fa-face-frown"></i> Bad</label>
+            </div>
+
+            <div class="form-check mx-3">
+                <input class="form-check-input" type="radio" name="rating" id="rating_good" value="good" required>
+                <label class="form-check-label" for="rating_good"><i class="fa-solid fa-face-smile"></i> Good</label>
+            </div>
+
+            <div class="form-check mx-3">
+                <input class="form-check-input" type="radio" name="rating" id="rating_excellent" value="excellent" required>
+                <label class="form-check-label" for="rating_excellent"><i class="fa-solid fa-face-laugh-beam"></i> Excellent!</label>
+            </div>
+        </div>
+
+        <!-- Comments section -->
+        <div class="mb-4">
+            <label class="form-label" for="feedback_comments"><i class="fa-solid fa-comments"></i> Comments:</label>
+            <textarea class="form-control" rows="6" name="comments" id="feedback_comments" style="width: 50%; height: 100px;"></textarea>
+        </div>
+
+        <!-- Name and Email fields -->
+        <div class="row mb-2 mt-2">
+            <div class="col">
+                <label class="form-label" for="feedback_name" style="margin-bottom: 1px;"><i class="fa-solid fa-pencil"></i> Your Name:</label>
+                <input type="text" required name="name" class="form-control" id="feedback_name" style="width: 400px; height: 30px;"/>
+            </div>
+
+            <div class="mb-2 mt-2">
+                <label class="form-label" for="feedback_email"><i class="fa-solid fa-envelope"></i> Email:</label>
+                <input type="email" name="email" required class="form-control" id="feedback_email" style="width: 400px; height: 30px;"/>
+            </div>
+        </div>
+
+        <!-- Success message after form submission -->
+        <p id="feedback-success-message" class="feedback-success-message"> Thank you for your Feedback!</p>
+        <button type="submit" class="btn btn-success btn-lg mt-0 mb-0" id="feedback-submit" style="background-color: #007BFF;"> Submit</button>
+    </form>
+
+
+

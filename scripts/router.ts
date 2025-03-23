@@ -17,9 +17,9 @@ export class Router{
     init(){
 
         window.addEventListener("DOMContentLoaded", () =>{
-           const path =location.hash.slice(1) || "/";
-           console.log(`[INFO] Initial Page Load: ${path}`);
-           this.loadRoute(path);
+            const path =location.hash.slice(1) || "/";
+            console.log(`[INFO] Initial Page Load: ${path}`);
+            this.loadRoute(path);
         });
         // popstate fires when the user clicks the forward/ back  button in the browser
         window.addEventListener("popstate", () =>{
@@ -68,4 +68,7 @@ export class Router{
             })
             .catch(error => console.error("[ERROR] Error loading page:", error));
     }
+
+
 }
+

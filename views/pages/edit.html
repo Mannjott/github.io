@@ -1,29 +1,40 @@
-<h1 class="mb-5"> Edit Contact</h1>
+<h1 class="mb-5"> Edit Event</h1>
 
 <form class="col-lg-6 col-md-10 col-sm-12 mb-4">
-    <div class="input-group mb-3">
-        <label for="fullName" class="input-group-text">Full Name: </label>
-        <input id="fullName" name="fullName" type="text" class="form-control"
-               aria-describedby="fullName-error" required>
-        <span id="fullName-error" class="text-danger"></span>
-    </div>
+  <div class="input-group mb-3">
+    <label for="eventName" class="input-group-text">Event Name: </label>
+    <input id="eventName" name="eventName" type="text" class="form-control"
+           aria-describedby="eventName-error" required>
+    <span id="eventName-error" class="text-danger"></span>
+  </div>
 
-    <div class="input-group mb-3">
-        <label for="contactNumber" class="input-group-text">Contact: </label>
-        <input id="contactNumber" name="contactNumber" type="tel" class="form-control"
-               aria-describedby="contactNumber-error" required>
-        <span id="contactNumber-error" class="text-danger"></span>
-    </div>
+  <div class="input-group mb-3">
+    <label for="location" class="input-group-text">Location: </label>
+    <input id="location" name="location" type="text" class="form-control"
+           aria-describedby="location-error" required>
+    <span id="location-error" class="text-danger"></span>
+  </div>
 
-    <div class="input-group mb-3">
-        <label for="emailAddress" class="input-group-text">Email Address: </label>
-        <input id="emailAddress" name="emailAddress" type="email" class="form-control"
-               aria-describedby="emailAddress-error" required>
-        <span id="emailAddress-error" class="text-danger"></span>
-    </div>
+  <div class="input-group mb-3">
+    <label for="description" class="input-group-text">Description: </label>
+    <input id="description" name="description" type="text" class="form-control"
+           aria-describedby="description-error" required>
+    <span id="description-error" class="text-danger"></span>
+  </div>
+
+  <!-- Event Date Input -->
+  <div class="input-group mb-3">
+    <label for="eventDate" class="input-group-text">Event Date: </label>
+    <input id="eventDate" name="eventDate" type="date" class="form-control" required>
+  </div>
+
+  <!-- Event Time Inputs (Fixed colon, hours and minutes) -->
+  <div class="input-group mb-3">
+    <label for="eventTime" class="input-group-text">Event Time: </label>
+    <input id="eventTime" name="eventTime" type="time" class="form-control" required>
+  </div>
 
 
-    <button id="editButton" type="submit" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-    <button id="cancelButton" type="reset" class="btn btn-warning"><i class="fa-solid fa-rotate-left"></i> Cancel</button>
+  <button id="editButton" type="submit" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+  <button id="cancelButton" type="reset" class="btn btn-warning"><i class="fa-solid fa-rotate-left"></i> Cancel</button>
 </form>
-

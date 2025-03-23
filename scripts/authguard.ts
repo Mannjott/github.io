@@ -24,14 +24,17 @@ document.addEventListener("keypress", resetSessionTimeout);
     }
 })();
 
-export function AuthGuard(){
+export function AuthGuard() {
     const user = sessionStorage.getItem("user");
-    const protectedRoutes = ["/contact-list"]
+    const protectedRoutes = ["/statistics", "/event-planning"];
+    const currentPath = location.hash.slice(1);
 
-    if(!user && protectedRoutes.includes(location.hash.slice(1))){
-        console.log("[AUTHGUARD] Unauthorized access detected. Redirecting to login page")
-        window.dispatchEvent(new CustomEvent("SessionExpired"));
-    }else{
+    if (!user && protectedRoutes.includes(currentPath)) {
+        console.log("[AUTHGUARD] Unauthorized access detected. Redirecting to login page");
+        location.hash = "/login";
+        return false; // Indicate that access was denied
+    } else {
         resetSessionTimeout();
+        return true; // Indicate that access was granted
     }
 }
